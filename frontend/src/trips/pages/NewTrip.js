@@ -49,7 +49,7 @@ const NewTrip = () => {
       formData.append('description', formState.inputs.description.value);
       formData.append('location', formState.inputs.location.value);
       formData.append('image', formState.inputs.image.value);
-      await sendRequest('http://localhost:4000/api/trips', 'POST', formData, {
+      await sendRequest('https://pintrip-back.onrender.com/trips', 'POST', formData, {
         Authorization: 'Bearer ' + auth.token,
       });
       history.push('/');

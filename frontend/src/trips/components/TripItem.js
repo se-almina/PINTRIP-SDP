@@ -25,7 +25,7 @@ const TripItem = (props) => {
   const confirmDeleteHandler = async () => {
     setShowConfirmModal(false);
     try {
-      await sendRequest(`http://localhost:4000/api/trips/${props.id}`, 'DELETE', null, {
+      await sendRequest(`https://pintrip-back.onrender.com/trips/${props.id}`, 'DELETE', null, {
         Authorization: 'Bearer ' + auth.token,
       });
       props.onDelete(props.id);
@@ -57,7 +57,7 @@ const TripItem = (props) => {
         <Card className='trip-item__content'>
           {isLoading && <LoadingSpinner asOverlay />}
           <div className='trip-item__image'>
-            <img src={`http://localhost:4000/${props.image}`} alt={props.title} />
+            <img src={`https://pintrip-back.onrender.com/${props.image}`} alt={props.title} />
           </div>
           <div className='trip-item__info'>
             <h2>{props.title}</h2>

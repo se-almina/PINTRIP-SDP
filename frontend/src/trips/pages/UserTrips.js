@@ -15,7 +15,7 @@ const UserTrips = () => {
   useEffect(() => {
     const fetchTrips = async () => {
       try {
-        const responseData = await sendRequest(`http://localhost:4000/api/trips/user/${userId}`);
+        const responseData = await sendRequest(`https://pintrip-back.onrender.com/trips/user/${userId}`);
         setLoadedTrips(responseData.trips);
       } catch (err) {}
     };
