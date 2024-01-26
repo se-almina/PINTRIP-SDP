@@ -36,7 +36,7 @@ const UpdateTrip = () => {
   useEffect(() => {
     const fetchTrip = async () => {
       try {
-        const responseData = await sendRequest(`https://pintrip-back.onrender.com/trips/${tripId}`);
+        const responseData = await sendRequest(`https://pintrip-back.onrender.com/api/trips/${tripId}`);
         setLoadedTrip(responseData.trip);
         setFormData(
           {
@@ -60,7 +60,7 @@ const UpdateTrip = () => {
     event.preventDefault();
     try {
       await sendRequest(
-        `https://pintrip-back.onrender.com/trips/${tripId}`,
+        `https://pintrip-back.onrender.com/api/trips/${tripId}`,
         'PATCH',
         JSON.stringify({
           title: formState.inputs.title.value,

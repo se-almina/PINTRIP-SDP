@@ -25,7 +25,7 @@ const TripItem = (props) => {
   const confirmDeleteHandler = async () => {
     setShowConfirmModal(false);
     try {
-      await sendRequest(`https://pintrip-back.onrender.com/trips/${props.id}`, 'DELETE', null, {
+      await sendRequest(`https://pintrip-back.onrender.com/api/trips/${props.id}`, 'DELETE', null, {
         Authorization: 'Bearer ' + auth.token,
       });
       props.onDelete(props.id);

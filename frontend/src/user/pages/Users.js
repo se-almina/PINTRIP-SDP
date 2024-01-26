@@ -12,7 +12,7 @@ const Users = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const responseData = await sendRequest('https://pintrip-back.onrender.com/users');
+        const responseData = await sendRequest('https://pintrip-back.onrender.com/api/users');
 
         setLoadedUsers(responseData.users);
       } catch (err) {}

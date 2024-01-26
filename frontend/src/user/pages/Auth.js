@@ -66,7 +66,7 @@ const Auth = () => {
     if (isLoginMode) {
       try {
         const responseData = await sendRequest(
-          'https://pintrip-back.onrender.com/users/login',
+          'https://pintrip-back.onrender.com/api/users/login',
           'POST',
           JSON.stringify({
             email: formState.inputs.email.value,
@@ -85,7 +85,7 @@ const Auth = () => {
         formData.append('name', formState.inputs.name.value);
         formData.append('password', formState.inputs.password.value);
         formData.append('image', formState.inputs.image.value);
-        const responseData = await sendRequest('https://pintrip-back.onrender.com/users/signup', 'POST', formData);
+        const responseData = await sendRequest('https://pintrip-back.onrender.com/api/users/signup', 'POST', formData);
 
         auth.login(responseData.userId, responseData.token);
       } catch (err) {}
