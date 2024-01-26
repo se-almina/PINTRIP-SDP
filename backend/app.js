@@ -47,7 +47,7 @@ app.use((error, req, res, next) => {
 });
 
 mongoose
-  .connect('mongodb+srv://alminasehic:F2RbR5G10liQTTm9@cluster0.kflkfv3.mongodb.net/?retryWrites=true&w=majority')
+  .connect(process.env.MONGO)
   .then(() => {
     app.listen(4000);
   })
