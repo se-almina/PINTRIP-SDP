@@ -5,7 +5,7 @@ async function runTest() {
 
   try {
     await driver.manage().window().maximize();
-    await driver.get('http://localhost:3000/'); // Replace with your app's URL
+    await driver.get('https://pintrip-front.onrender.com/'); // Replace with your app's URL
 
     await driver.wait(until.elementLocated(By.xpath('//*[@id="root"]/header/nav/ul/li[2]/a')), 5000).click();
     await driver.wait(until.elementLocated(By.xpath('//*[@id="root"]/main/div/button')), 5000).click();

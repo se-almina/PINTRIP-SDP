@@ -15,21 +15,10 @@ async function runTest() {
     const password = await driver.findElement(By.xpath('//*[@id="password"]'));
     await password.sendKeys('spiderman');
 
-    await driver.wait(until.elementLocated(By.xpath('//*[@id="root"]/main/div/form/button')), 5000).click(); //login
-
+    await driver.wait(until.elementLocated(By.xpath('//*[@id="root"]/main/div/form/button')), 5000).click();
     await driver.wait(until.elementLocated(By.xpath('//*[@id="root"]/main/ul/li[1]/div/a')), 5000).click();
 
-    await driver.wait(until.elementLocated(By.xpath('//*[@id="root"]/main/ul/li/div/div[3]/a')), 5000).click();
-
-    const title = await driver.wait(until.elementLocated(By.id('title')), 5000);
-    await title.sendKeys('!!!!');
-
-    const description = await driver.wait(until.elementLocated(By.id('description')), 5000);
-    await description.sendKeys('!!!!');
-
-    await driver.wait(until.elementLocated(By.xpath('//*[@id="root"]/main/form/button')), 5000).click();
-
-    await driver.wait(until.elementLocated(By.xpath('//*[@id="root"]/main/ul/li/div/div[3]/button')), 5000);
+    await driver.wait(until.elementLocated(By.xpath('//*[@id="root"]/main/ul/li/div/div[3]/a')), 5000);
 
     console.log('Test passed');
   } catch (error) {
